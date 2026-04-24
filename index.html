@@ -355,6 +355,39 @@
       display: block;
     }
 
+    .qr-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 32px 0 8px;
+      padding: 20px;
+      border: 2px solid #3a2515;
+      background: rgba(255, 245, 220, 0.5);
+    }
+
+    .qr-block img {
+      width: 180px;
+      height: 180px;
+      display: block;
+    }
+
+    .qr-block .caption {
+      font-family: 'Rye', serif;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #2b1810;
+    }
+
+    .qr-block .subcaption {
+      font-family: 'Special Elite', monospace;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      color: #5a3a20;
+      word-break: break-all;
+      text-align: center;
+    }
+
     @media (max-width: 640px) {
       body { padding: 16px 8px 40px; }
       .poster { padding: 36px 24px 32px; margin: 16px auto; }
@@ -536,6 +569,12 @@
       <a href="https://sc.judiciary.gov.ph/sc-affirms-murder-conviction-of-police-officers-in-kian-delos-santos-case/">Supreme Court of the Philippines (Kian affirmance)</a>
       <br><br>
       From the companion reading of <a href="https://escapingthehardway.org">Escaping the Hard Way: Knock and Plead</a>. These words are free. <a href="https://unlicense.org">The Unlicense</a>.
+
+      <div class="qr-block">
+        <img src="qr.svg" alt="QR code linking to the-knock-came-back.">
+        <div class="caption">SCAN TO SHARE</div>
+        <div class="subcaption">andygauge.github.io/the-knock-came-back</div>
+      </div>
     </footer>
 
   </main>
