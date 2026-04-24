@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Knock Came Back — Duterte in the Dock</title>
+  <meta name="description" content="On April 23, 2026, the International Criminal Court confirmed charges against Rodrigo Roa Duterte and sent him to trial for crimes against humanity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      font-family: 'Merriweather', Georgia, 'Times New Roman', serif;
+      line-height: 1.75;
+      color: #2b1810;
+      background-color: #0a0a0a;
+      background-image:
+        repeating-linear-gradient(
+          90deg,
+          #050505 0,
+          #050505 6px,
+          #1f1f1f 6px,
+          #1f1f1f 10px,
+          #2a2a2a 10px,
+          #2a2a2a 14px,
+          #1f1f1f 14px,
+          #1f1f1f 18px,
+          #050505 18px,
+          #050505 78px
+        );
+      background-attachment: fixed;
+      padding: 32px 16px 80px;
+    }
+
+    .poster {
+      max-width: 780px;
+      margin: 40px auto;
+      padding: 64px 72px 56px;
+      position: relative;
+      background-color: #efe1bf;
+      background-image:
+        radial-gradient(ellipse at 30% 20%, rgba(255,240,200,0.5) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(120,70,25,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at center, transparent 0%, rgba(120,70,25,0.1) 55%, rgba(80,45,15,0.35) 100%),
+        repeating-linear-gradient(37deg, rgba(120,70,25,0.03) 0, rgba(120,70,25,0.03) 1px, transparent 1px, transparent 4px),
+        repeating-linear-gradient(148deg, rgba(80,45,15,0.025) 0, rgba(80,45,15,0.025) 1px, transparent 1px, transparent 5px);
+      border: 2px solid #3a2515;
+      box-shadow:
+        0 0 0 1px #5a3a20,
+        0 0 0 8px #efe1bf,
+        0 0 0 9px #3a2515,
+        0 30px 80px rgba(0,0,0,0.9),
+        inset 0 0 120px rgba(100,60,20,0.25);
+    }
+
+    .poster::before {
+      content: '';
+      position: absolute;
+      top: 18px; left: 18px; right: 18px; bottom: 18px;
+      border: 1px solid #6b4a25;
+      pointer-events: none;
+    }
+
+    .poster::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        radial-gradient(circle at 2% 4%, rgba(40,20,5,0.4) 0, transparent 2%),
+        radial-gradient(circle at 98% 3%, rgba(40,20,5,0.35) 0, transparent 2%),
+        radial-gradient(circle at 1% 97%, rgba(40,20,5,0.4) 0, transparent 2%),
+        radial-gradient(circle at 99% 98%, rgba(40,20,5,0.45) 0, transparent 2%);
+      pointer-events: none;
+    }
+
+    .poster-head {
+      text-align: center;
+      border-bottom: 3px double #3a2515;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      font-family: 'Special Elite', 'Courier New', monospace;
+      font-size: 14px;
+      letter-spacing: 4px;
+      color: #3a2515;
+      margin-bottom: 12px;
+    }
+
+    .wanted {
+      font-family: 'Rye', 'Special Elite', serif;
+      font-size: clamp(72px, 14vw, 148px);
+      letter-spacing: 0.04em;
+      color: #2b1810;
+      line-height: 0.9;
+      text-shadow:
+        2px 2px 0 rgba(0,0,0,0.15),
+        0 0 1px #2b1810;
+      margin: 4px 0 8px;
+    }
+
+    .for-crimes {
+      font-family: 'Rye', 'Special Elite', serif;
+      font-size: clamp(18px, 2.6vw, 26px);
+      color: #3a2515;
+      letter-spacing: 0.12em;
+      margin: 8px 0 18px;
+    }
+
+    .name {
+      font-family: 'Rye', serif;
+      font-size: clamp(28px, 5vw, 48px);
+      letter-spacing: 0.02em;
+      color: #2b1810;
+      margin: 18px 0 10px;
+    }
+
+    .aliases {
+      font-family: 'Special Elite', monospace;
+      font-size: 15px;
+      color: #5a3a20;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 14px 28px;
+      font-family: 'Special Elite', 'Courier New', monospace;
+      font-size: 14px;
+      color: #3a2515;
+      margin: 20px 0 6px;
+      text-align: left;
+      padding: 14px 20px;
+      border-top: 1px solid #6b4a25;
+      border-bottom: 1px solid #6b4a25;
+    }
+
+    .stats .label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #6b4a25;
+      margin-bottom: 2px;
+    }
+
+    .stats .value {
+      display: block;
+      color: #2b1810;
+      line-height: 1.4;
+    }
+
+    .reward {
+      font-family: 'Rye', serif;
+      font-size: clamp(16px, 2.4vw, 22px);
+      color: #2b1810;
+      letter-spacing: 0.08em;
+      margin-top: 20px;
+    }
+
+    .reward em {
+      font-style: normal;
+      color: #7a1515;
+    }
+
+    article {
+      position: relative;
+      z-index: 1;
+      font-size: 17px;
+      color: #2b1810;
+    }
+
+    article h1 {
+      font-family: 'Rye', serif;
+      font-size: clamp(30px, 5vw, 44px);
+      text-align: center;
+      margin: 8px 0 8px;
+      color: #2b1810;
+      line-height: 1.1;
+    }
+
+    article .byline {
+      font-family: 'Special Elite', monospace;
+      text-align: center;
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: #5a3a20;
+      margin-bottom: 36px;
+    }
+
+    article p {
+      margin-bottom: 1.2em;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    article p + p {
+      text-indent: 1.5em;
+    }
+
+    .bottom-bar {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 3px double #3a2515;
+      font-family: 'Special Elite', monospace;
+      font-size: 13px;
+      color: #3a2515;
+      line-height: 1.7;
+    }
+
+    .bottom-bar a {
+      color: #5a3a20;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    .bottom-bar a:hover {
+      color: #7a1515;
+    }
+
+    .seal {
+      display: inline-block;
+      padding: 10px 16px;
+      margin-top: 20px;
+      border: 2px solid #7a1515;
+      color: #7a1515;
+      font-family: 'Rye', serif;
+      font-size: 14px;
+      letter-spacing: 3px;
+      transform: rotate(-3deg);
+      opacity: 0.85;
+    }
+
+    .dossier {
+      position: relative;
+      z-index: 1;
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 3px double #3a2515;
+    }
+
+    .dossier-stamp {
+      display: inline-block;
+      padding: 6px 14px;
+      border: 2px solid #7a1515;
+      color: #7a1515;
+      font-family: 'Rye', serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      transform: rotate(-2deg);
+      margin-bottom: 18px;
+      opacity: 0.9;
+    }
+
+    .dossier-title {
+      font-family: 'Rye', serif;
+      font-size: clamp(26px, 4vw, 36px);
+      color: #2b1810;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+
+    .dossier-subtitle {
+      font-family: 'Special Elite', 'Courier New', monospace;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      color: #5a3a20;
+      margin-bottom: 24px;
+    }
+
+    .dossier p {
+      margin-bottom: 1.1em;
+      text-align: justify;
+      hyphens: auto;
+      font-size: 17px;
+      color: #2b1810;
+    }
+
+    .dossier p + p { text-indent: 1.5em; }
+
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      margin: 24px 0 28px;
+      padding: 20px 22px;
+      border: 1px solid #6b4a25;
+      background: rgba(255, 245, 220, 0.35);
+    }
+
+    .coverage-col h3 {
+      font-family: 'Rye', serif;
+      font-size: 17px;
+      color: #2b1810;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .clip-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 6px;
+      font-family: 'Special Elite', 'Courier New', monospace;
+      font-size: 14px;
+      color: #2b1810;
+      line-height: 1.65;
+    }
+
+    .clip-list li {
+      padding: 2px 0;
+      border-bottom: 1px dashed rgba(58, 37, 21, 0.35);
+    }
+
+    .clip-list li:last-child { border-bottom: none; }
+
+    .tally {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin: 20px 0 28px;
+      flex-wrap: wrap;
+    }
+
+    .tally-card {
+      flex: 1 1 180px;
+      max-width: 240px;
+      padding: 18px 20px;
+      text-align: center;
+      border: 2px solid #3a2515;
+      background: rgba(255, 245, 220, 0.5);
+    }
+
+    .tally-card .big {
+      font-family: 'Rye', serif;
+      font-size: 56px;
+      line-height: 1;
+      color: #2b1810;
+      display: block;
+    }
+
+    .tally-card .lbl {
+      font-family: 'Special Elite', monospace;
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #5a3a20;
+      margin-top: 6px;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 16px 8px 40px; }
+      .poster { padding: 36px 24px 32px; margin: 16px auto; }
+      article p { text-align: left; }
+      article p + p { text-indent: 0; }
+      .coverage-grid { grid-template-columns: 1fr; gap: 24px; }
+      .dossier p { text-align: left; }
+      .dossier p + p { text-indent: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="poster">
+
+    <header class="poster-head">
+      <div class="eyebrow">BY ORDER OF PRE-TRIAL CHAMBER I</div>
+      <h2 class="wanted">WANTED</h2>
+      <div class="for-crimes">FOR CRIMES AGAINST HUMANITY</div>
+      <div class="name">RODRIGO ROA DUTERTE</div>
+      <div class="aliases">alias "Duterte Harry" · former Mayor of Davao · former President of the Republic of the Philippines</div>
+
+      <div class="stats">
+        <div>
+          <span class="label">CASE</span>
+          <span class="value">ICC-01/21-01/25</span>
+        </div>
+        <div>
+          <span class="label">COUNTS</span>
+          <span class="value">Three — murder &amp; attempted murder</span>
+        </div>
+        <div>
+          <span class="label">PERIOD</span>
+          <span class="value">1 Nov 2011 — 16 Mar 2019</span>
+        </div>
+        <div>
+          <span class="label">APPREHENDED</span>
+          <span class="value">11 March 2025 — Manila</span>
+        </div>
+        <div>
+          <span class="label">HELD AT</span>
+          <span class="value">ICC Detention Centre, The Hague</span>
+        </div>
+        <div>
+          <span class="label">STATUS</span>
+          <span class="value">Committed to trial 23 Apr 2026</span>
+        </div>
+      </div>
+
+      <div class="reward">charges confirmed · <em>committed to trial</em></div>
+    </header>
+
+    <article>
+      <h1>The Knock Came Back</h1>
+      <div class="byline">April 24, 2026</div>
+
+      <p>On April 23, 2026, three judges at the International Criminal Court unanimously confirmed the charges against Rodrigo Roa Duterte and sent him to trial. Crimes against humanity. Three counts. Murder and attempted murder committed on the territory of the Philippines between November 1, 2011 and March 16, 2019, in the context of the campaign he called the war on drugs.</p>
+
+      <p>I want to say clearly that this is a good day. Not a triumphant day. The dead are still dead, the mothers of Southblock 7 still count empty plates, and the men I watched stand three rows deep in Calamba holding cells will not be compensated by an arrest warrant served at The Hague. But a door that was nailed shut has come open, and that matters.</p>
+
+      <p>The charges cover both the Davao Death Squad years and the presidency. The prosecutor presented evidence for 76 murders and 2 attempted murders across 49 incidents, and the court noted these were not exhaustive. The judges found substantial grounds to believe that Duterte and his co-perpetrators acted on a common plan to kill alleged criminals. Police in Manila have officially acknowledged around 6,000 deaths across the years of the campaign. Human rights groups have documented as many as 30,000. The confirmed charges name a fraction. They are not the whole accounting. They are the part the court could prove in February, in a hearing that ran from the 23rd to the 27th, with witnesses who have spent years afraid.</p>
+
+      <p>Duterte waived his right to attend the hearing. The day before the confirmation decision, on April 22, the Appeals Chamber also confirmed the court's jurisdiction over the crimes. Jurisdiction had been his main legal escape hatch since he pulled the Philippines out of the Rome Statute in 2018. That door is closed now too. The withdrawal did not erase the years the treaty was in force.</p>
+
+      <p>He has been in custody in The Hague since March 11, 2025, when Philippine police arrested him in Manila on an ICC warrant served through Interpol. He is 81. His defense argued at the hearing that the prosecutors had selectively weaponized his rhetoric, that his orders were defensive, that he never meant to incite violence. The judges were not persuaded enough to halt the trial. The trial itself is expected to begin in late 2026 or early 2027.</p>
+
+      <p>I heard someone say this week that the trial does not matter because the killings are over. The killings are not over. The machinery of tokhang did not retire with the man who built it. Watch lists still exist in municipalities across the country. Nanlaban, the official line that every shot fired was a suspect who fought back, is still the shape of most drug-related police reports in the Philippines. What ended in 2022 was one presidency. What did not end was the belief that the poor can be cleared from a neighborhood faster than they can be ministered to. A trial at The Hague will not dismantle that belief. It will put the argument that ministry is slower than extermination into a courtroom where the counterargument gets answered under oath.</p>
+
+      <p>About the survivors. The ones who made this day are not the lawyers. They are the families who kept names and photographs and cardboard signs. They are the witnesses who testified from other countries because it was not safe to testify from home. They are Senator Leila de Lima, who sat in detention for almost seven years because she started the first hearings. They are Chito Gascon, chair of the Commission on Human Rights, who did not live to see this day. They are Maria Elena Vignoli of Human Rights Watch, who said the decision opens the door to long awaited justice for the families. They are the RISE UP coalition of widows and mothers who kept showing up to courtrooms that did not want them. I do not know most of these people. I know the street they walked. I know what it looked like when the system they were trying to survive came to the holding cells I was standing in.</p>
+
+      <p>The arc of accountability is long. Argentina waited thirty years for the Dirty War convictions. Cambodia waited thirty for the first Khmer Rouge verdicts. Rwanda waited twenty-six for Kabuga. Karadžić was a fugitive for thirteen years and Mladić for sixteen, and both were convicted. The pattern, every time we have it recorded, is that once the proceedings begin, almost no one escapes permanently. This is the part of the pattern Duterte has now entered. Not sentencing. Proceeding. The trial will take a long time. It will be technical and painful and reported in fragments. He may die before verdict. The arc does not require him to live to matter.</p>
+
+      <p>What I will say as someone who walked the streets of Calamba and sat in the cells and ate rice with the men on the farm, is that the most excellent way has always known this would come. Not because it predicted a day on a court's calendar. Because the most excellent way knows that love is patient, and patience is what outlasts the hard way every time, even when the hard way controls the microphone for a season. Six thousand dead. Maybe thirty thousand. One trial at The Hague. One man in a courtroom who is finally being asked to answer for them. It is not enough. It is also not nothing. It is the beginning of the answer that the widows of Southblock 7 have been waiting for since the first knock.</p>
+
+      <p>Toktok. Hangyo. The knock came back. This time it is knocking on his door.</p>
+
+      <div class="seal">CHARGES CONFIRMED</div>
+    </article>
+
+    <section class="dossier">
+      <div class="dossier-stamp">EXHIBIT A</div>
+      <h2 class="dossier-title">The One Trial That Stuck</h2>
+      <div class="dossier-subtitle">CALOOCAN RTC BRANCH 125 · PEOPLE v. OARES ET AL. · JUDGMENT 29 NOVEMBER 2018</div>
+
+      <p>Only one drug war killing under Duterte has produced a murder conviction in the Philippine courts. It is the Kian Loyd delos Santos case, and the reason it stuck is that a nearby establishment's CCTV camera recorded the minutes before the shooting and refused to let the official story stand.</p>
+
+      <p>Kian was seventeen years old, a high school student in Caloocan City. On the night of August 16, 2017, a Caloocan police anti-drug sweep code-named Oplan Galugad ran through his neighborhood. The three officers who took him — PO3 Arnel Oares, PO1 Jeremias Pereda, and PO1 Jerwin Cruz — filed the standard report. He had resisted. He had fired at them. He had forced them to fire back. Nanlaban.</p>
+
+      <p>The CCTV footage showed something else. Two officers dragging a small, limp figure through an alley toward the spot where his body would be found. Witnesses corroborated the video. Kian was unarmed. He was beaten first. He was shot while kneeling.</p>
+
+      <p>On November 29, 2018, Presiding Judge Rodolfo Azucena Jr. convicted all three officers of murder and sentenced them to up to forty years in prison without eligibility for parole. It was the first, and to date only, conviction of Philippine security force personnel for a killing carried out in the drug war. The Supreme Court later affirmed the verdict.</p>
+
+      <p>The lesson of the Kian case is narrow and uncomfortable. When the evidence exists outside the police's control, the nanlaban defense collapses. When the only record is the police's own, it holds. Of the thousands of other drug war killings, almost none had a camera on them. That is why the ICC trial matters. It is the first forum in which the systematic pattern, not a single camera's accidental witness, gets weighed under oath.</p>
+    </section>
+
+    <section class="dossier">
+      <div class="dossier-stamp">EXHIBIT B</div>
+      <h2 class="dossier-title">Who Is Saying So</h2>
+      <div class="dossier-subtitle">A RECORD OF OUTLETS REPORTING THE CONFIRMATION OF CHARGES · AS OF 24 APRIL 2026</div>
+
+      <p>This is the public record as I can see it one day after the decision. It is not exhaustive. Wire reprints and syndication multiply the reach of each original story. But the shape of the coverage is already clear.</p>
+
+      <div class="tally">
+        <div class="tally-card">
+          <span class="big">11</span>
+          <span class="lbl">PHILIPPINE OUTLETS</span>
+        </div>
+        <div class="tally-card">
+          <span class="big">5</span>
+          <span class="lbl">U.S. OUTLETS</span>
+        </div>
+        <div class="tally-card">
+          <span class="big">4</span>
+          <span class="lbl">OTHER INTERNATIONAL</span>
+        </div>
+      </div>
+
+      <div class="coverage-grid">
+        <div class="coverage-col">
+          <h3>Philippines</h3>
+          <ul class="clip-list">
+            <li>Rappler</li>
+            <li>Philippine Daily Inquirer</li>
+            <li>Philstar</li>
+            <li>Manila Bulletin</li>
+            <li>Manila Times</li>
+            <li>Tempo</li>
+            <li>Mindanews</li>
+            <li>GMA News</li>
+            <li>Philippine News Agency</li>
+            <li>The Daily Tribune</li>
+            <li>PhilNews</li>
+          </ul>
+        </div>
+        <div class="coverage-col">
+          <h3>United States</h3>
+          <ul class="clip-list">
+            <li>The Washington Post</li>
+            <li>CNN</li>
+            <li>Bloomberg</li>
+            <li>Human Rights Watch</li>
+            <li>The Diplomat</li>
+          </ul>
+          <h3 style="margin-top:22px;">Elsewhere</h3>
+          <ul class="clip-list">
+            <li>Al Jazeera</li>
+            <li>CBC News</li>
+            <li>JURIST</li>
+            <li>International Criminal Court</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>Eleven Philippine desks to five American ones. For a story about the first former head of state from Asia ever committed to trial at the International Criminal Court, the domestic press is doing the work of keeping it in public view. A ruling of this weight is not yet on every American front page, and the tally is the evidence.</p>
+    </section>
+
+    <footer class="bottom-bar">
+      <strong>Sources</strong><br>
+      <a href="https://www.icc-cpi.int/news/icc-pre-trial-chamber-i-confirms-all-charges-against-rodrigo-roa-duterte-and-commits-him-trial">ICC</a> ·
+      <a href="https://www.icc-cpi.int/news/icc-appeals-chamber-confirms-jurisdiction-duterte-case">ICC Appeals</a> ·
+      <a href="https://www.hrw.org/news/2026/04/23/icc-court-sends-duterte-case-to-trial">Human Rights Watch</a> ·
+      <a href="https://www.aljazeera.com/news/2026/4/23/icc-confirms-crimes-against-humanity-trial-of-ex-philippine-leader-duterte">Al Jazeera</a> ·
+      <a href="https://www.cnn.com/2026/04/23/asia/philippines-duterte-icc-trial-crimes-against-humanity-intl-hnk">CNN</a> ·
+      <a href="https://www.washingtonpost.com/world/2026/04/23/icc-duterte-charges-crimes-against-humanity/4ef80598-3ef3-11f1-bb46-ed564688d953_story.html">Washington Post</a> ·
+      <a href="https://www.bloomberg.com/news/articles/2026-04-23/duterte-heads-for-trial-as-icc-confirms-drug-war-charges">Bloomberg</a> ·
+      <a href="https://www.cbc.ca/news/world/hague-icc-duterte-trial-9.7174262">CBC</a> ·
+      <a href="https://www.rappler.com/philippines/icc-appeals-chamber-confirms-duterte-charges-april-2026/">Rappler</a> ·
+      <a href="https://www.philstar.com/headlines/2026/04/24/2523283/duterte-icc-trial-could-begin-late-2026-or-early-2027">Philstar</a> ·
+      <a href="https://mb.com.ph/2026/04/23/icc-confirms-charges-vs-duterte-orders-trial-to-proceed">Manila Bulletin</a> ·
+      <a href="https://www.manilatimes.net/2026/04/23/podcasts/headlines-icc-rejects-duterte-jurisdiction-appeal-apr-23-2026/2326147">Manila Times</a> ·
+      <a href="https://mindanews.com/top-stories/2026/04/icc-pre-trial-judges-confirm-charges-vs-duterte/">Mindanews</a> ·
+      <a href="https://globalnation.inquirer.net/319640/icc-confirms-all-charges-vs-rodrigo-duterte">Inquirer</a> ·
+      <a href="https://www.gmanetwork.com/news/specials/content/24/the-kian-delos-santos-case-a-timeline/">GMA</a> ·
+      <a href="https://thediplomat.com/2026/04/former-philippine-president-duterte-to-stand-trial-at-icc-after-judges-confirm-charges/">The Diplomat</a> ·
+      <a href="https://www.jurist.org/news/2026/04/icc-confirms-charges-against-philippines-ex-president-duterte/">JURIST</a> ·
+      <a href="https://www.hrw.org/news/2018/11/29/first-conviction-officers-philippines-drug-war">HRW (Kian case)</a> ·
+      <a href="https://sc.judiciary.gov.ph/sc-affirms-murder-conviction-of-police-officers-in-kian-delos-santos-case/">Supreme Court of the Philippines (Kian affirmance)</a>
+      <br><br>
+      From the companion reading of <a href="https://escapingthehardway.org">Escaping the Hard Way: Knock and Plead</a>. These words are free. <a href="https://unlicense.org">The Unlicense</a>.
+    </footer>
+
+  </main>
+
+</body>
+</html>
